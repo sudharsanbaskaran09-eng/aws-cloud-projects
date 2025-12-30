@@ -28,9 +28,6 @@ This project demonstrates secure connectivity between an Amazon EC2 instance and
 ## 📷 Screenshots
 See `/screenshots` folder.
 
-## 🎥 Demo
-A demo video has been uploaded to this repository.
-
 ## 🧠 Skills Gained
 AWS EC2, RDS, VPC, Security Groups, MySQL, Cloud Troubleshooting
 
