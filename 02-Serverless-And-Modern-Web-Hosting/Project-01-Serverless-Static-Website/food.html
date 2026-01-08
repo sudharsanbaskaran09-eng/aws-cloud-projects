@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brat's Food — Foodie Website</title>
+
+    <!-- icons / swiper / styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        /* small accessibility helpers */
+        a:focus,
+        button:focus {
+            outline: 3px solid #fdbd12;
+            outline-offset: 2px;
+        }
+
+        /* simple success modal styles */
+        .success-overlay {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 9999;
+        }
+
+        .success-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-card h3 {
+            margin-bottom: .5rem;
+            color: #2b2b2b;
+        }
+
+        .success-card p {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        .success-card .btn {
+            background: #FDBD12;
+            color: #111;
+            padding: .8rem 1.4rem;
+            border-radius: .8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER PART -->
+    <header>
+        <nav class="navbar flex between wrapper" aria-label="Primary navigation">
+            <a href="#" class="logo">Brat's Food.</a>
+
+            <!-- DESKTOP MENU -->
+            <ul class="navlist flex gap-3" role="menubar" aria-label="Main menu">
+                <li role="none"><a role="menuitem" href="#">Home</a></li>
+                <li role="none"><a role="menuitem" href="#">Menu</a></li>
+                <li role="none"><a role="menuitem" href="#">Service</a></li>
+                <li role="none"><a role="menuitem" href="#">About us</a></li>
+                <li role="none"><a role="menuitem" href="#">Contacts</a></li>
+            </ul>
+
+            <div class="desktop-action flex gap-2" aria-hidden="false">
+                <button class="cart-icon" aria-label="Open cart">
+                    <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                    <span class="cart-value" aria-live="polite">0</span>
+                </button>
+
+                <a href="#" class="btn">Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"></i></a>
+
+                <button class="hamburger" aria-label="Toggle mobile menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <ul class="mobile-menu" aria-hidden="true">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#" class="btn">Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section>
+            <div class="hero-section flex wrapper gap-4">
+                <div class="content">
+                    <h1>Enjoy Your <span>Food</span></h1>
+                    <p class="para">We will fill your tummy with delicious<br />food with fast delivery.</p>
+
+                    <div class="flex gap-2">
+                        <a href="#" class="btn">Order now</a>
+                        <a href="#" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="image-container" aria-hidden="true">
+                    <img src="images/delivery-boy.png" alt="Delivery person with order" />
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section>
+            <div class="wrapper p-top">
+                <div class="text-center">
+                    <h5>Our Services</h5>
+                    <h2>How Does It Work?</h2>
+                </div>
+
+                <div class="flex text-center mt-4 gap-4" role="list">
+                    <article class="service-card" role="listitem">
+                        <div class="image-container"><img src="images/easy-to-order.png" alt=""></div>
+                        <h3>Easy To Order</h3>
+                        <p>You only need a few steps in ordering food.</p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="image-container"><img src="images/fast-delivery.png" alt=""></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Delivery that is always on-time — even faster.</p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="image-container"><img src="images/best-quality.png" alt=""></div>
+                        <h3>Best Quality</h3>
+                        <p>Not only fast — our quality is also number one.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU / CARDS -->
+        <section>
+            <div class="wrapper p-top">
+                <div class="text-center">
+                    <h5>Our Menu</h5>
+                    <h2>The Most Popular</h2>
+                </div>
+
+                <div class="card-list text-center flex mt-4 gap-2" aria-live="polite">
+                    <!-- product cards will be injected by main.js -->
+                </div>
+
+                <!-- CART TAB -->
+                <div class="cart-tab" role="dialog" aria-label="Shopping cart">
+                    <h3>Your Cart</h3>
+
+                    <div class="cart-list" aria-live="polite">
+                        <!-- cart items appended here by main.js -->
+                    </div>
+
+                    <div class="total-container">
+                        <h4>Total:</h4>
+                        <h4 class="cart-total">₹0.00</h4>
+                    </div>
+
+                    <div class="btn-container flex gap-2">
+                        <button class="btn close-btn">Close</button>
+                        <!-- Checkout button inside cart -->
+                        <button id="checkout-btn" class="btn" title="Proceed to checkout">Check Out</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section>
+            <div class="wrapper p-top flex gap-3">
+                <div class="image-container"><img src="images/delivery-boy-with-phone.png" alt="Delivery with phone" />
+                </div>
+                <div class="review-container">
+                    <h5>Our Reviews</h5>
+                    <h2>What They Say?</h2>
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper mt-4">
+                            <div class="swiper-slide">
+                                <div class="flex gap-2">
+                                    <div class="profile"><img src="images/SANJAY.jpg" alt="Sanjay S" /></div>
+                                    <div>
+                                        <h4>Sanjay S</h4>
+                                        <div class="mt-half"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="para">Foodie is the best. Besides the many delicious meals, the service is
+                                    also very good,
+                                    especially very fast delivery. I highly recommend Foodie to you.</p>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="flex gap-2">
+                                    <div class="profile"><img src="images/profile3.jpeg" alt="Olivia Smith" /></div>
+                                    <div>
+                                        <h4>Olivia Smith</h4>
+                                        <div class="mt-half"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="para">Delicious dishes, cozy ambiance, and exceptional service. A must-visit
+                                    for food lovers
+                                    seeking bold flavors and unforgettable dining experiences. Highly recommended, every
+                                    bite delights!
+                                </p>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="flex gap-2">
+                                    <div class="profile"><img
+                                            src="images/WhatsApp Image 2025-10-25 at 21.11.42_059c838d.jpg"
+                                            alt="Sairam" /></div>
+                                    <div>
+                                        <h4>Sairam</h4>
+                                        <div class="mt-half"><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="para">Fresh ingredients, creative menu, and warm service make this spot a
+                                    hidden gem. Perfect
+                                    for casual dinners or special nights out. Truly a foodie’s paradise!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex between">
+                            <a href="#" class="arrow" id="prev"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="#" class="arrow" id="next"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APP PROMO -->
+        <section>
+            <div class="wrapper p-top">
+                <div class="app-container flex between">
+                    <div class="image-container"><img src="images/mobile-app.png" alt="Mobile app preview" /></div>
+                    <div class="content">
+                        <h5>Our Application</h5>
+                        <h2>Simple Way To<br />Order Food</h2>
+                        <p class="para">Discover food wherever and whenever<br />and get your food delivery quickly.</p>
+                        <a href="#" class="btn">Get The App</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSCRIBE -->
+        <section>
+            <div class="wrapper p-top">
+                <div class="text-center">
+                    <h5>Our Subscribe</h5>
+                    <h2>Subscribe To Our Newsletter</h2>
+                    <p class="para m-auto">Drop your email below to get daily updates about us.</p>
+
+                    <label class="input-container flex" for="newsletter">
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email Address"
+                            autocomplete="off" />
+                        <button id="subscribe" class="btn">Subscribe</button>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="flex wrapper gap-4">
+                <div class="footer-wrapper">
+                    <a href="#" class="logo">Brat's Food.</a>
+                    <p class="mt-one-half">We will fill your tummy with delicious<br />food with fast delivery.</p>
+                    <div class="flex gap-2 mt-one-half">
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Our Menu</h4>
+                    </li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Special</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Popular</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Category</a></li>
+                </ul>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Company</h4>
+                    </li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Why Brat's Food</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Partner With Us</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">About Us</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">FAQ's</a></li>
+                </ul>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Support</h4>
+                    </li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Account</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Support Center</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Feedback</a></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- success overlay -->
+    <div class="success-overlay" id="successOverlay" role="alertdialog" aria-hidden="true">
+        <div class="success-card">
+            <h3>Payment Successful 🎉</h3>
+            <p>Your payment went through successfully. Thank you for ordering with Brat's Food!</p>
+            <button id="successClose" class="btn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- your main.js (cart + product injection) -->
+    <script defer src="main.js"></script>
+
+    <!-- Razorpay script (checkout popup) -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- inline checkout integration (works with your main.js DOM) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const successOverlay = document.getElementById('successOverlay');
+            const successClose = document.getElementById('successClose');
+
+            function parseRupeeToPaise(totalText) {
+                const numeric = (totalText || '').replace(/[^\d.]/g, '');
+                const value = parseFloat(numeric || '0');
+                return Math.round(value * 100);
+            }
+
+            // Clear cart UI and state after successful payment
+            function clearCartUI() {
+                // remove cart items visually
+                const cartList = document.querySelector('.cart-list');
+                if (cartList) cartList.innerHTML = '';
+                // reset totals
+                const cartTotal = document.querySelector('.cart-total');
+                const cartValue = document.querySelector('.cart-value');
+                if (cartTotal) cartTotal.textContent = '₹0.00';
+                if (cartValue) cartValue.textContent = '0';
+                // also reset cartProduct array if present in main.js
+                try {
+                    // eslint-disable-next-line no-undef
+                    if (typeof cartProduct !== 'undefined') cartProduct = [];
+                } catch (err) { /* ignore */ }
+            }
+
+            checkoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const cartTotalEl = document.querySelector('.cart-total');
+                const totalText = cartTotalEl ? cartTotalEl.textContent : '₹0.00';
+                const amountPaise = parseRupeeToPaise(totalText);
+
+                if (amountPaise <= 0) {
+                    alert('Your cart is empty. Add items before checkout.');
+                    return;
+                }
+
+                const options = {
+                    key: "rzp_test_1234567890", // <-- test key placeholder — replace with your key
+                    amount: amountPaise,
+                    currency: "INR",
+                    name: "Brat's Food",
+                    description: "Order Payment",
+                    prefill: { name: "", email: "", contact: "" },
+                    handler: function (response) {
+                        // Payment success - clear cart & show success overlay
+                        clearCartUI();
+                        successOverlay.style.display = 'flex';
+                        successOverlay.setAttribute('aria-hidden', 'false');
+                        console.log('Razorpay success response', response);
+                    },
+                    modal: {
+                        ondismiss: function () { console.log('Checkout closed'); }
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+                rzp.open();
+            });
+
+            // close overlay handler
+            successClose.addEventListener('click', () => {
+                const successOverlay = document.getElementById('successOverlay');
+                successOverlay.style.display = 'none';
+                successOverlay.setAttribute('aria-hidden', 'true');
+            });
+        });
+    </script>
+    <!-- success overlay -->
+    <div class="success-overlay" id="successOverlay" role="alertdialog" aria-hidden="true">
+        <div class="success-card">
+            <h3>Payment Successful 🎉</h3>
+            <p>Your payment went through successfully. Thank you for ordering with Brat's Food!</p>
+            <button id="successClose" class="btn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="main.js" defer></script>
+
+    <!-- Razorpay inline script -->
+    <script>
+        // your existing inline script code (as-is)
+    </script>
+</body>
+
+</html>
